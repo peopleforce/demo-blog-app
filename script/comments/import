@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'csv'
+require_relative '../../config/environment'
+require_relative 'shared.d/csv_extractor'
+require_relative 'shared.d/comment_builder'
+
+include Term::ANSIColor
+
+csv_extractor = CsvExtractor.new(file_path: 'comments.csv', grouped_key: :post_slug)
+CommentBuilder.call(data: csv_extractor.grouped_data)
