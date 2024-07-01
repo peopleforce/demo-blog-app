@@ -8,7 +8,7 @@ require_relative './config/environment'
 post_slugs = Post.pluck(:slug)
 
 # Number of comments to generate
-num_comments = 10000
+num_comments = 10_000
 
 # Array to hold comment data
 comments_data = []
